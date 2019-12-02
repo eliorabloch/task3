@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +22,16 @@ namespace taskthree
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-         List<Host> hostsList;
+
+        List<Host> hostsList;
         public MainWindow()
         {
             InitializeComponent();
 
-
-           
-
             hostsList = new List<Host>()
             {
                 new Host()
-                {   
+                {
                     HostName= "Tzimerman",
                     Units= new List<HostingUnit>()
                     {
@@ -78,7 +77,6 @@ namespace taskthree
 
 
 
-
         }
         private Host currentHost;
 
@@ -89,7 +87,6 @@ namespace taskthree
 
         private void cbHostList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             InitializeHost(cbHostList.SelectedIndex);
         }
         private void InitializeHost(int index)
@@ -105,7 +102,13 @@ namespace taskthree
 
             };
         }
+
+        private void cbHostList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
-        
-    
+
+
+

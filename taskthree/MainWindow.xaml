@@ -18,8 +18,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions >
-            <ComboBox Name="cbHostList" HorizontalAlignment= "Stretch" Margin="120,10,0,0" VerticalAlignment= "Stretch" Width="120" Grid.Column="0" />
-            <TextBox Name="tbHostName" Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="47.4,5,0,0" TextWrapping="Wrap" Text="this is my " VerticalAlignment="Stretch" Width="120" FontSize="18" FontFamily="Showcard Gothic" TextChanged="tbHostName_TextChanged"/>
+            <ComboBox Name="cbHostList" HorizontalAlignment= "Stretch" Margin="199,10,78.6,0.4" Width="120" Grid.Column="0" SelectionChanged="cbHostList_SelectionChanged" />
+            <TextBox Name="tbHostName" Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="162.4,10,115.2,0" TextWrapping="Wrap" Text="Eliel-Hotel"  VerticalAlignment="Top" Width="120" FontSize="18" FontFamily="Showcard Gothic" TextChanged="tbHostName_TextChanged"/>
         </Grid>
 
 
