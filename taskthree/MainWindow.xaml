@@ -7,19 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="800">
     <Grid Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="https://image.freepik.com/foto-gratis/fondo-marino-playa-abstracta-desenfoque-movimiento-panoramica-luz-bokeh-destello-lente_1484-1446.jpg" Opacity="0.8"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="200*"/>
             <RowDefinition Height="200*"/>
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
-        <Grid Name="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
+        <Grid Name="UpGrid" HorizontalAlignment="Stretch" 
+              Height="auto" Grid.Row="0" VerticalAlignment="Stretch" 
+              Width="auto">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions >
-            <ComboBox Name="cbHostList" HorizontalAlignment= "Stretch" Margin="199,10,78.6,0.4" Width="120" Grid.Column="0" SelectionChanged="cbHostList_SelectionChanged" />
-            <TextBox Name="tbHostName" Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="162.4,10,115.2,0" TextWrapping="Wrap" Text="Eliel-Hotel"  VerticalAlignment="Top" Width="120" FontSize="18" FontFamily="Showcard Gothic" TextChanged="tbHostName_TextChanged"/>
+            <ComboBox Name="cbHostList" 
+                      HorizontalAlignment= "Stretch" 
+                      Margin="199,10,78.6,0.4" Width="120" Grid.Column="0" 
+                      SelectionChanged="cbHostList_SelectionChanged" />
+            <TextBox Name="tbHostName" Grid.Column="1" 
+                     HorizontalAlignment="Stretch" Height="23" 
+                     Margin="162.4,10,115.2,0" TextWrapping="Wrap" 
+                     Text="{Binding Path=HostName}" 
+                     VerticalAlignment="Top"
+                     Width="120" FontSize="18" FontFamily="Bernard MT Condensed" 
+                     TextChanged="tbHostName_TextChanged"/>
         </Grid>
 
 

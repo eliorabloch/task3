@@ -8,7 +8,7 @@ namespace taskthree
 {
      public class Host
     {
-        public string HostName;
+        public string HostName { get; set; }
         public List<HostingUnit> Units;
     }
 }

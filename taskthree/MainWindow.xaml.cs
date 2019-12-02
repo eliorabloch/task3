@@ -17,49 +17,55 @@ using System.Windows.Shapes;
 
 namespace taskthree
 {
+ 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        List<Host> hostsList;
+        private Host currentHost { get; set; }
+       
+        List<Host> hostsList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+
 
             hostsList = new List<Host>()
             {
                 new Host()
                 {
-                    HostName= "Tzimerman",
+                    HostName= "Eliel-Hotel",
                     Units= new List<HostingUnit>()
                     {
                         new HostingUnit()
                         {
-                            UnitName="יופי של צימר",
+                            UnitName="Kings Suite",
                             Rooms=3,
-                            IsSwimmimgPool=true,
+                            IsSwimingPool=true,
                             AllOrders=new List<DateTime>(),
 
-                           Uris=new List<string> { "https://www.google.com/search?q=hotel+pictures&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiLgO_e55TmAhVL_aQKHdHiBEEQ_AUoAXoECAkQAw&biw=1422&bih=678&dpr=2.25#imgrc=bIXLBaX9yT_KQM:",
-                            "https://www.google.com/search?q=hotel+pictures&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiLgO_e55TmAhVL_aQKHdHiBEEQ_AUoAXoECAkQAw&biw=1422&bih=678&dpr=2.25#imgrc=B2z9ePFgFX4fCM:",
-                            "https://www.google.com/search?q=hotel+pictures&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiLgO_e55TmAhVL_aQKHdHiBEEQ_AUoAXoECAkQAw&biw=1422&bih=678&dpr=2.25#imgrc=gfZ92jZ_5xcsRM:"}
+                          Uris=new List<string> { "https://triplanco.com/wp-content/uploads/2019/01/hotel_triplanco.jpg"
+                        }
+
+
                         },
                         new HostingUnit()
                         {
-                            UnitName= "אחלה של צימר",
+                            UnitName= "Palace Suite",
                             Rooms=2,
-                            IsSwimmimgPool=false,
-                            AllOrders=new List< DateTime>()
+                            IsSwimingPool=false,
+                            AllOrders=new List< DateTime>(),
+                             Uris=new List<string>{ " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROMTpoMQx4497usFxROm2Ly1QCqIFYj8Z8a69YVxtfWsN0GJ5d&s"}
 
                         },
                          new HostingUnit()
                         {
-                            UnitName= "אחלה של צימר",
+                            UnitName= "luxury Suite",
                             Rooms=2,
-                            IsSwimmimgPool=false,
-                            AllOrders=new List< DateTime>()
+                            IsSwimingPool=false,
+                            AllOrders=new List< DateTime>(),
+                              Uris=new List<string>{ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSydJh8qsCbGInXldidelO0tK-3Nw3FEyK8lK2LOCIseofiFcsB&s " }
 
                         }
 
@@ -75,10 +81,7 @@ namespace taskthree
             cbHostList.DisplayMemberPath = "HostName";
             cbHostList.SelectedIndex = 0;
 
-
-
         }
-        private Host currentHost;
 
         private void tbHostName_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -99,13 +102,7 @@ namespace taskthree
                 HostingUnitUserControl a = new HostingUnitUserControl(currentHost.Units[i]);
                 MainGrid.Children.Add(a);
                 Grid.SetRow(a, i + 1);
-
             };
-        }
-
-        private void cbHostList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

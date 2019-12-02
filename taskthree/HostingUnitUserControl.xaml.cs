@@ -24,20 +24,21 @@ namespace taskthree
     public partial class HostingUnitUserControl : UserControl
     {
         int imageIndex;
-        Viewbox vbImage;
+        Viewbox vbImage { get; set; }
         Image MyImage;
         public HostingUnit CurrentHostingUnit { get; set; }
         private Calendar MyCalendar;
 
+
         public HostingUnitUserControl(HostingUnit hostUnit)
         {
-            vbImage = new Viewbox();
             InitializeComponent();
+
+            vbImage = new Viewbox();
             imageIndex = 0;
-            vbImage.Width = 75;
-            vbImage.Height = 75;
+            vbImage.Width = 110;
+            vbImage.Height = 110;
             vbImage.Stretch = Stretch.Fill;
-            UserControlGrid.Children.Add(vbImage);
             Grid.SetColumn(vbImage, 2);
             Grid.SetRow(vbImage, 0);
             this.CurrentHostingUnit = hostUnit;
@@ -48,12 +49,13 @@ namespace taskthree
             SetBlackOutDates();
             MyImage = CreateViewImage();
             vbImage.Child = null;
-            vbImage.Child = MyImage;            vbImage.MouseUp += vbImage_MouseUp;
+            vbImage.Child = MyImage;
+            UserControlGrid.Children.Add(vbImage);
+            vbImage.MouseUp += vbImage_MouseUp;
             vbImage.MouseEnter += vbImage_MouseEnter;
-            vbImage.MouseLeave += vbImage_MouseLeave;
-
-
+            vbImage.MouseLeave += vbImage_MouseLeave;
         }
+
         private Image CreateViewImage()
         {
             Image dynamicImage = new Image();
@@ -103,8 +105,8 @@ namespace taskthree
         }
         private void vbImage_MouseLeave(object sender, MouseEventArgs e)
         {
-            vbImage.Width = 75;
-            vbImage.Height = 75;
+            vbImage.Width = 110;
+            vbImage.Height = 110;
         }
         private void vbImage_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -118,6 +120,11 @@ namespace taskthree
            (imageIndex + CurrentHostingUnit.Uris.Count - 1) % CurrentHostingUnit.Uris.Count;
             MyImage = CreateViewImage();
             vbImage.Child = MyImage;
+        }
+
+        private void IsSwimigPool_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
