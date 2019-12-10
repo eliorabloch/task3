@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:taskthree"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="800">
+        Title="Reservations" Icon="https://www.clipartwiki.com/clipimg/detail/35-354446_hotel-clipart-svg-hotel-icon-png-grey.png" Height="640" Width="800">
     <Grid Name="MainGrid">
         <Grid.Background>
             <ImageBrush ImageSource="https://image.freepik.com/foto-gratis/fondo-marino-playa-abstracta-desenfoque-movimiento-panoramica-luz-bokeh-destello-lente_1484-1446.jpg" Opacity="0.8"/>
